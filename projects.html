@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Liana's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">LC</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="projects.html" class="active"><i class="fas fa-code"></i> Projects</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-content projects-page">
+        <div class="container">
+            <div class="projects-table-tabs">
+                <div class="table-tab-header">
+                    <div class="tab-cell active" data-tab="web">Web Development</div>
+                    <div class="tab-cell" data-tab="automation">Automation & Systems</div>
+                </div>
+                
+                <div class="table-tab-content">
+                    <div class="tab-section active" id="web">
+                        <div id="webProjects"></div>
+                    </div>
+                    <div class="tab-section" id="automation">
+                        <div id="automationProjects"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="currentYear"></span> Liana Chagunda. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/lianachagunda" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/lianachagunda" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:liana.chagunda@example.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
