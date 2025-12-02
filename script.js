@@ -30,8 +30,8 @@ const projectsByCategory = {
             description: "Frontend development and UI/UX design for girls' empowerment platform. Social media and content management system for educational initiatives and community engagement.",
             technologies: ["React", "UI/UX", "Content Management"],
             icon: "fas fa-users",
-            liveLink: "#",
-         
+            liveLink: null,
+            hasAttachments: true
         }
     ],
     automation: [
@@ -58,6 +58,7 @@ function createProjectList(projects) {
             <div class="project-actions">
                 ${project.liveLink ? `<a href="${project.liveLink}" target="_blank" class="action-btn"><i class="fas fa-external-link-alt"></i> Demo</a>` : ''}
                 ${project.githubLink ? `<a href="${project.githubLink}" target="_blank" class="action-btn secondary"><i class="fab fa-github"></i> Code</a>` : ''}
+                ${project.hasAttachments ? `<button class="action-btn attachments-btn" onclick="showAttachments('${project.title}')"><i class="fas fa-paperclip"></i> View Attachments</button>` : ''}
             </div>
         </div>
     `).join('');
@@ -294,6 +295,46 @@ function setCurrentYear() {
     const yearElement = document.getElementById('currentYear');
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
+    }
+}
+
+// Show attachments modal
+function showAttachments(projectTitle) {
+    const modal = document.createElement('div');
+    modal.className = 'attachments-modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>${projectTitle} - Screenshots</h3>
+                <button class="close-btn" onclick="closeAttachments()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="screenshots-grid">
+                    <img src="1.png" alt="Girl Rise Screenshot 1" class="screenshot">
+                    <img src="2.png" alt="Girl Rise Screenshot 2" class="screenshot">
+                    <img src="3.png" alt="Girl Rise Screenshot 3" class="screenshot">
+                    <img src="4.png" alt="Girl Rise Screenshot 4" class="screenshot">
+                    <img src="5.png" alt="Girl Rise Screenshot 5" class="screenshot">
+                    <img src="6.png" alt="Girl Rise Screenshot 6" class="screenshot">
+                    <img src="7.png" alt="Girl Rise Screenshot 7" class="screenshot">
+                    <img src="8.png" alt="Girl Rise Screenshot 8" class="screenshot">
+                    <img src="9.png" alt="Girl Rise Screenshot 9" class="screenshot">
+                    <img src="10.png" alt="Girl Rise Screenshot 10" class="screenshot">
+                    <img src="11.png" alt="Girl Rise Screenshot 11" class="screenshot">
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+}
+
+// Close attachments modal
+function closeAttachments() {
+    const modal = document.querySelector('.attachments-modal');
+    if (modal) {
+        modal.remove();
+        document.body.style.overflow = 'auto';
     }
 }
 
