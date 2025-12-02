@@ -48,8 +48,8 @@ const projectsByCategory = {
 
 // Function to create project list
 function createProjectList(projects) {
-    return projects.map(project => `
-        <div class="project-row">
+    return projects.map((project, index) => `
+        <div class="project-row animate-on-scroll" style="animation-delay: ${index * 0.2}s">
             <div class="project-name">${project.title}</div>
             <div class="project-desc">${project.description}</div>
             <div class="project-tech-list">
@@ -298,7 +298,6 @@ function setCurrentYear() {
     }
 }
 
-// Show attachments modal
 function showAttachments(projectTitle) {
     const modal = document.createElement('div');
     modal.className = 'attachments-modal';
